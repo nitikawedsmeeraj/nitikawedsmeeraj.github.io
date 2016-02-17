@@ -1,0 +1,16 @@
+/*
+ * QueryLoader v2 - A simple script to create a preloader for images
+ *
+ * For instructions read the original post:
+ * http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/
+ *
+ * Copyright (c) 2011 - Gaya Kessler
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Version:  2.2
+ * Last update: 03-04-2012
+ *
+ */
+(function(e){Array.prototype.indexOf||(Array.prototype.indexOf=function(e){var t=this.length>>>0,n=Number(arguments[1])||0;n=n<0?Math.ceil(n):Math.floor(n),n<0&&(n+=t);for(;n<t;n++)if(n in this&&this[n]===e)return n;return-1});var t=new Array,n=0,r=!1,i="",s="",o="",u="",a=0,f=0,l={onComplete:function(){},backgroundColor:"#000",barColor:"#fff",barHeight:1,percentage:!1,deepSearch:!0,completeAnimation:"fade",minimumTime:500,onLoadComplete:function(){if(l.completeAnimation=="grow"){var t=500,n=new Date;n.getTime()-f<l.minimumTime&&(t=l.minimumTime-(n.getTime()-f)),e(o).stop().animate({width:"100%"},t,function(){e(this).animate({top:"0%",width:"100%",height:"100%"},500,function(){e(s).fadeOut(500,function(){e(this).remove(),l.onComplete()})})})}else e(s).fadeOut(500,function(){e(s).remove(),l.onComplete()})}},c=function(){var e=new Date;f=e.getTime(),h(),m()},h=function(){i=e("<div></div>").appendTo("body").css({display:"none",width:0,height:0,overflow:"hidden"});for(var n=0;t.length>n;n++)e.ajax({url:t[n],type:"HEAD",complete:function(e){r||(a++,p(this.url))}})},p=function(t){var n=e("<img />").attr("src",t).bind("load",function(){d()}).appendTo(i)},d=function(){n++;var t=n/a*100;e(o).stop().animate({width:t+"%",minWidth:t+"%"},200),l.percentage==1&&e(u).text(Math.ceil(t)+"%"),n==a&&v()},v=function(){e(i).remove(),l.onLoadComplete(),r=!0},m=function(){s=e("<div id='qLoverlay'></div>").css({width:"100%",height:"100%",backgroundColor:l.backgroundColor,backgroundPosition:"fixed",position:"fixed",zIndex:666999,top:0,left:0}).appendTo("body"),o=e("<div id='qLbar'></div>").css({height:l.barHeight+"px",marginTop:"-"+l.barHeight/2+"px",backgroundColor:l.barColor,width:"0%",position:"absolute",top:"50%"}).appendTo(s),l.percentage==1&&(u=e("<div id='qLpercentage'></div>").text("0%").css({height:"40px",width:"100px",position:"absolute",fontSize:"3em",top:"50%",left:"50%",marginTop:"-"+(59+l.barHeight)+"px",textAlign:"center",marginLeft:"-50px",color:l.barColor}).appendTo(s))},g=function(n){var r="";if(e(n).css("background-image")!="none")var r=e(n).css("background-image");else if(typeof e(n).attr("src")!="undefined"&&n.nodeName.toLowerCase()=="img")var r=e(n).attr("src");if(r.indexOf("gradient")==-1){r=r.replace(/url\(\"/g,""),r=r.replace(/url\(/g,""),r=r.replace(/\"\)/g,""),r=r.replace(/\)/g,"");var i=r.split(", ");for(var s=0;s<i.length;s++)if(i[s].length>0&&t.indexOf(i[s])==-1){var o="";e.browser.msie&&e.browser.version<9&&(o="?"+Math.floor(Math.random()*3e3)),t.push(i[s]+o)}}};e.fn.queryLoader2=function(t){return t&&e.extend(l,t),this.each(function(){g(this),l.deepSearch==1&&e(this).find("*:not(script)").each(function(){g(this)})}),c(),this}})(jQuery);
