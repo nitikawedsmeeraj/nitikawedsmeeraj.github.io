@@ -180,7 +180,7 @@ cursor: default;
 .gopal, .seema{
 font-family: BebasNeueRegular,Arial;
  text-align: center;
-    font-size: 100px;
+    font-size: 82px;
     left: 110px;
     position: absolute;
     top: 120px;
@@ -254,7 +254,7 @@ text-shadow: 1px 1px 0px #629F9F, 2px 2px 0px #000;
 }
 
 .bubble-content strong{
-font-size: 70px;
+font-size: 40px;
 display: block;
 font-family: BebasNeueRegular;
 text-shadow: 2px 2px 0px #629F9F, 4px 4px 0px #000;
