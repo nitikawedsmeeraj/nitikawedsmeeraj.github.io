@@ -248,7 +248,7 @@ text-align: left;
 color: #FFF;
 font-family: Lobster13Regular;
 font-size: 20px;
-padding: 100px 0px 10px 45px;
+padding: 110px 0px 10px 45px;
 letter-spacing: 2px;
 text-shadow: 1px 1px 0px #629F9F, 2px 2px 0px #000;
 }
@@ -269,7 +269,7 @@ text-shadow: 1px 1px 0px #629F9F, 2px 2px 0px #000;
 
 #bubble1 .bubble-content {
 text-align: right;
-padding: 60px 53px 0 0;
+padding: 74px 53px 0 0;
 }
 
 .year{
@@ -293,7 +293,7 @@ height: 100%;
 }
 
 .share .ico .hoverimg{
-background: url(images/share.png) no-repeat -2px 0;
+background: url(images/share.png?tttt=t) no-repeat -2px 0;
 width:42px;
 height: 42px;
 position: absolute;
@@ -729,8 +729,6 @@ margin-top: 80px;
 width:700px;
 height: 90px;
 overflow: hidden;
-background:url(images/sprite.png) no-repeat top center;
-text-indent: -9999px;
 clear: both;
 }
 
@@ -740,8 +738,6 @@ float: left;
 width:150px;
 height: 58px;
 overflow: hidden;
-text-indent: -9999px;
-background:url(images/sprite.png) no-repeat 18px -87px;
 
 -webkit-transition: background-position 0.4s ease;
 -moz-transition: background-position 0.4s ease;
