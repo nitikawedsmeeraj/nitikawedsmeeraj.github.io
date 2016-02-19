@@ -247,14 +247,14 @@ z-index: 9999;
 text-align: left;
 color: #FFF;
 font-family: Lobster13Regular;
-font-size: 20px;
+font-size: 14px;
 padding: 110px 0px 10px 45px;
 letter-spacing: 2px;
 text-shadow: 1px 1px 0px #629F9F, 2px 2px 0px #000;
 }
 
 .bubble-content strong{
-font-size: 35px;
+font-size: 30px;
 display: block;
 font-family: BebasNeueRegular;
 text-shadow: 2px 2px 0px #629F9F, 4px 4px 0px #000;
